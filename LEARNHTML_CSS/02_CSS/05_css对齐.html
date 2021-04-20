@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 图片居中对齐 */
+        .img_align
+        {
+            display: block;
+            margin: auto;
+            /* 表示宽度占整体的40% */
+            width: 40%; 
+        }
+
+        .right 
+        {
+            position: absolute;
+            right: 0;
+            width: 300px;
+            border: 3px solid#73AD21;
+            padding: 10px;
+        }
+
+
+        .center { 
+            height: 200px;
+            position: relative;
+            border: 3px solid green; 
+        }
+
+        .center p {
+            margin: 0;
+            border: 3px solid#73AD21;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 图片居中对齐 -->
+    <h2 class="text_line">图片居中对齐</h2>
+    <p>要让图片居中对齐，可以使用margin: auto; 并将它放到块元素中</p>
+    <img class="img_align" src="https://picsum.photos/100/100?random=14" alt="Paris" style="width: 40%;">
+
+    <!-- 左右对齐-使用定位方式 -->
+    <h2>右对齐</h2>
+    <p> 以下实例演示了如何使用position 来实现右对齐</p>
+    
+    <div class="right">
+        <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！</p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>居中</h2>
+    <p>以下实例中，我们使用了 positioning 和 transform 属性来设置水平和垂直居中：</p>
+
+    <div class="center">
+        <p>我是水平和垂直居中的。</p>
+    </div>
+    
+
+</body>
+</html>

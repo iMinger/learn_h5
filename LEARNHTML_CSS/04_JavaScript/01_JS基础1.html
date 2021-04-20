@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 第一次使用</title>
+
+    <!-- 2.内嵌式JS 写在header 中-->
+    <script>
+        function myFunction() {
+            // 通过document.getElementById 来获取对应的元素。
+            document.getElementById("jstype2").innerHTML="我的第一个JavaScript函数内嵌式";
+        }
+
+        function sayHi(name, message) {
+
+            // document.write 如果在html页面加载完成之后调用，那么会将整个html页面重写覆盖
+            document.write("return 语句执行前");
+            return;
+            alert("hello" + name + "," + message); // 这一行永远不会被调用。
+        }
+    </script>
+
+
+    <script src="01_myFirstScript.js"></script>
+</head>
+<body>
+    
+    
+
+    <h1>我的Web页面</h1>
+
+    <!-- 1.行内式js 写在body 中-->
+    <p id="jstype1">一个段落</p>
+    <button type="button" onclick="inlineJSFunction()">尝试一下</button>
+
+    <script>
+        function inlineJSFunction() {
+            document.getElementById("jstype1").innerHTML="我的第一个JavaScript函数行内式";
+        } 
+    </script>
+
+    <!-- 2.内嵌式js -->
+    <p id="jstype2">一个段落</p>
+    <button type="button" onclick="myFunction()">尝试一下</button>
+
+
+    <!-- 2.内嵌式js -->
+    <p id="jstype3">一个段落</p>
+    <button type="button" onclick="sayHi()">尝试一下</button>
+
+    <input type="button" value="全选" onclick="allcheck(this)">
+    <script>
+    var checkAll = false;
+    function allcheck(element){
+        checkAll = !checkAll;
+        element.value=checkAll?"全不选":"全选";
+        let inputs = document.getElementsByName('checkbox') 
+        for( var index in inputs){
+            inputs[index].checked = checkAll;
+        }
+    }
+    </script>
+
+
+<!-- 表单验证 -->
+    <form action="" name="myForm">
+        <p>Email:</p>
+        <input type="text" name="email">
+        <input type="button" value="提交" onclick="validateForm()">
+    </form>
+
+    <script>
+        function validateForm() {
+            var x=document.forms["myForm"]["email"].value;
+            var atpos=x.indexOf("@");
+            var dotpos=x.lastIndexOf(".");
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 > x.length) {
+                alert("不是一个有效的email地址，请重新填写");
+                return false;
+            }
+        }
+    </script>
+
+
+    <form action="" name="promiseTest中">
+        <p>Promise 测试中</p>
+        <input type="button" value="测试" onclick="promiseTest()">
+    </form>
+
+    <script>
+        function promiseTest(){
+            return new Promise(function (resolve, reject) {
+                var a = 0;
+                var b = 1;
+                if (b == 0) reject("Diveide zero");
+                else resolve(a/b);
+            }).then( function (value) {
+                console.log("a/b=" + value);   
+            }).catch(function (err){
+                console.log(err);
+            }).finally(function (){
+                console.log("End");
+            });
+        }
+    </script>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css链接</title>
+
+    <style>
+        a:link{color: #000000; text-decoration: underline;}         /* 未访问链接*/
+        a:visited{color: aqua; text-decoration: line-through;}      /* 已访问链接*/
+        a:hover{color: blueviolet; text-decoration: overline;}      /* 鼠标移动到链接上*/
+        a:active{color: beige; text-decoration: dottline-throughed;} /* 鼠标点击时*/
+    </style>
+
+</head>
+<body>
+    <p><b><a href="//www.baidu.com" target="_blank">这是一个链接</a></b></p>
+    <p><b>注意：</b> hover 必须在：link和a:visited 之后定义才有效</p>
+    <p><b>注意：</b> active 必须在hover之后定义是有效的</p>
+</body>
+</html>
